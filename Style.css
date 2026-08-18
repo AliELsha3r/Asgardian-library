@@ -96,7 +96,7 @@ a{
     gap: 50px;
 }
 
-.btn_loginBtn,.btn_favorites,.btn_personal{
+.btn_loginBtn{
     text-decoration: none;
     border: 1px solid transparent;
     border-radius: 6px;
@@ -106,12 +106,50 @@ a{
     background-color:   rgba(12,13,16,0.9);
     font-family: Georgia, "Times New Roman", serif;
     font-weight: bold;
+    margin-left: 390px;
 }
 
 
-.btn_loginBtn:hover,.btn_favorites:hover,.btn_personal:hover{
+.btn_loginBtn:hover{
     color: #15130f;
     transform: translateY(-2px);
     background-color:  #c7a76b;
+}
+
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+   /* Matches your navbar dark background */
+  padding: 10px;
+}
+
+/* Circular Icon Button Default State */
+.nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #222226; /* Subtle dark border when inactive */
+  color: #e0e0e0;            /* Default off-white icon color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Gold Hover State */
+.nav-btn:hover {
+  border-color: #f3cf7a; /* Asgardian gold border color */
+  color: #f3cf7a;        /* Icon color turns gold */
+  box-shadow: 0 0 8px rgba(243, 207, 122, 0.15); /* Soft gold glow */
 }
 
