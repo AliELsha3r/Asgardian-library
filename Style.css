@@ -17,6 +17,21 @@
         color: var(--text);
         font-family: Georgia, "Times New Roman", serif;
     }
+#login_page{
+    background:linear-gradient(0,0,0,0.5), url("material/1135533.jpg") center/cover no-repeat #0d0d0d;
+  animation: fadeIn 2.5s ease-in;
+
+}   
+
+
+  @keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+
+
     a{
         text-decoration: none;
     }
