@@ -166,3 +166,48 @@ a{
   color: #f3cf7a;        /* Icon color turns gold */
   box-shadow: 0 0 8px rgba(243, 207, 122, 0.15); /* Soft gold glow */
 }
+
+#email{
+    font-size: 20px;
+    background-color:black;
+   border-color: #c7a76b;
+   border-radius:30px;
+  padding: 5 px;
+  color: var(--gold);
+}
+#pass{
+    padding: 5px ;
+    font-size: 20px;
+    background-color:black;
+   border-color: #c7a76b;
+   border-radius: 30px;
+   color: var(--gold);
+}
+.login_info{
+    
+    margin-top: 100px;
+    text-align: center;
+}
+#text_email{
+     font-family: Georgia, "Times New Roman", serif;
+   color: var(--gold-light);
+margin-right:200px;
+font-weight: 100;
+font-size: 20px;
+}
+#text_pass{
+     font-family: Georgia, "Times New Roman", serif;
+     color:var(--gold-light);
+    margin-right: 200px;
+font-weight: 100;
+font-size: 20px;
+}
+
+
+h3{
+    font-size: 70px;
+   color:var(--gold);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    text-align: center;
+}
