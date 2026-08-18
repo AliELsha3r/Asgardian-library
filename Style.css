@@ -66,7 +66,7 @@ a {
 
     border-bottom: 1px solid var(--line);
 
-    background: rgba(12, 13, 16, 0.9);
+    background: rgba(12, 13, 16, 0.5);
     backdrop-filter: blur(14px);
 
     position: sticky;
@@ -261,64 +261,39 @@ a {
 }
 
 
-/* Back to main button */
-
-#back_main {
-    float: left;
-
-    margin-top: -400px;
-
-    padding: 10px 16px;
-
-    border: 1px solid var(--gold);
-    border-radius: 30px;
-
-    box-sizing: border-box;
-
-    background-color: var(--gold);
-    color: var(--bg);
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    transition: 0.2s ease;
-}
-
-#back_main:hover {
-    transform: translateY(-2px);
-}
 
 
 /* =========================================================
-   6. MAIN PAGE / HERO
-   ========================================================= */
+6. MAIN PAGE / HERO
+========================================================= */
 
 .hero {
     margin-top: 80px;
     margin-left: 120px;
-
+    
     font-size: 40px;
-
+    
     display: flex;
 }
 
 .golden_txt {
     color: var(--gold);
-
+    
     font-family: Arial, sans-serif;
     font-size: 0.72rem;
-
+    
     letter-spacing: 0.22em;
     font-weight: 700;
 }
 
 h1 {
     margin-top: 0;
-
+    
     color: var(--text);
-
+    
     font-size: 100px;
     font-weight: bold;
-
+    
     letter-spacing: -3px;
 }
 
@@ -328,7 +303,7 @@ h1 span {
 
 .hero-text {
     margin-top: -40px;
-
+    
     color: var(--muted);
     font-size: 16px;
 }
@@ -339,12 +314,12 @@ h1 span {
 .mjolnir_img {
     width: 550px;
     height: 550px;
-
+    
     margin-top: 0;
     margin-left: 70px;
-
+    
     animation: fadeIn 2s ease-in-out;
-
+    
     transform: rotate(-15deg);
 }
 
@@ -353,78 +328,77 @@ h1 span {
 
 .ExploreBtn {
     display: inline-block;
-
+    
     text-decoration: none;
-
+    
     padding: 14px 24px;
     margin-bottom: 100px;
 }
 
 
 /* =========================================================
-   7. HOOK SECTION
+7. HOOK SECTION
    ========================================================= */
-
-.hook {
-    max-width: 100%;
-
-    box-sizing: border-box;
-
-    display: flex;
-
-    margin-bottom: 100px;
-
-    background-color: var(--bg-soft);
-
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-}
-
-.hook h2 {
-    margin-top: 5px;
-    margin-left: 100px;
-    margin-right: 0;
-    margin-bottom: 60px;
-
-    font-size: 40px;
-}
-
-.hook p {
-    margin: 60px 100px 0;
-}
-
-.hook_right {
-    flex: 1;
-    min-width: 0;
-
-    padding-top: 40px;
+   
+   .hook {
+       max-width: 100%;
+       
+       box-sizing: border-box;
+       
+       display: flex;
+       
+       margin-bottom: 100px;
+       
+       background-color: var(--bg-soft);
+       
+       border-top: 1px solid var(--line);
+       border-bottom: 1px solid var(--line);
+    }
+    
+    .hook h2 {
+        margin-top: 5px;
+        margin-left: 100px;
+        margin-right: 0;
+        margin-bottom: 60px;
+        
+        font-size: 40px;
+    }
+    
+    .hook p {
+        margin: 60px 100px 0;
+    }
+    
+    .hook_right {
+        flex: 1;
+        min-width: 0;
+        
+        padding-top: 40px;
     padding-left: 200px;
-
+    
     color: var(--muted);
-
+    
     font-size: 16px;
     word-spacing: 2px;
 }
 
 
 /* =========================================================
-   8. LOGIN PAGE
-   ========================================================= */
+8. LOGIN PAGE
+========================================================= */
 
 #login_page {
+    animation: fadeIn 1.5s ease-in;
+    
     background-image:
-        linear-gradient(rgba(0, 0, 0, 0.5)),
-        url("material/LogIN.BG.jpeg");
-
-    animation: fadeIn 2s ease-in;
+    linear-gradient(rgba(0, 0, 0, 0.5)),
+    url("material/LogIN.BG.jpeg");
 }
-
 
 /* Login header */
 
 .login_header {
     color: var(--gold);
-
+    
     font-family: Georgia, "Times New Roman", serif;
     font-size: 70px;
     font-weight: 70;
@@ -452,12 +426,16 @@ h1 span {
 #text_email,
 #text_pass {
     color: var(--gold-light);
-
+    
     font-family: Georgia, "Times New Roman", serif;
     font-size: 20px;
     font-weight: 100;
-
+    
     margin-right: 200px;
+}
+
+#text_pass{
+    margin-left: 30px;
 }
 
 
@@ -466,39 +444,45 @@ h1 span {
 #email,
 #pass {
     font-size: 15px;
-
-    background-color: black;
-
-    border: 1px solid var(--bg);
-
-    border-radius: 30px;
-
-    padding: 10px 16px;
-
+    
+    background-color: var(--bg);
+    
+    border: 1px solid var(--muted);
+    
+    border-radius: 10px;
+    
+    padding: 10px 36px;
+    
     box-sizing: border-box;
-
+    
     color: var(--gold);
-
+    
     transition: 0.2s ease;
+    
+    margin-top: 10px;
 }
 
 
 /* Submit button */
 
 #sub_btn {
-    padding: 10px 16px;
-
+    padding: 10px 36px;
+    
     border: 1px solid var(--gold);
-    border-radius: 30px;
-
+    border-radius: 10px;
+    
     box-sizing: border-box;
-
+    
     background-color: var(--gold);
     color: var(--bg);
-
+    
     font-family: Georgia, "Times New Roman", serif;
-
+    font-size: 15px;
+    font-weight: bold;
+    
     transition: 0.2s ease;
+    
+    margin-top: 50px;
 }
 
 
@@ -507,6 +491,39 @@ h1 span {
 #email:hover,
 #pass:hover,
 #sub_btn:hover {
-    border-color: var(--gold);
+    border-color: var(--gold-light);
     transform: translateY(-1px);
+}
+
+#sub_btn:hover{
+    background-color: var(--gold-light);
+}
+
+/* Back to main button */
+
+#back_main {
+
+    margin-left: 70px;
+    margin-top: 40px;
+
+    padding: 10px 36px;
+
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    background-color: transparent;
+    color: var(--gold);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+
+    transition: 0.2s ease;
+}
+
+#back_main:hover {
+    background-color: var(--gold);
+    color: var(--bg);
+    transform: translateY(-2px);
 }
