@@ -298,12 +298,12 @@ h1 span{
     font-size: 16px;
 }
 .mjolnir_img{
-    width: 490px;
-    height: 480px;
+    width: 550px;
+    height: 550px;
     margin-top: 0%;
     margin-left: 70px;
-    animation: fadeIn 3s ease-in-out;
-    transform: rotate(-25deg);
+    animation: fadeIn 2s ease-in-out;
+    transform: rotate(-15deg);
 }
 
 @keyframes fadeIn {
