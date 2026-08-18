@@ -231,8 +231,6 @@
         background-color: var(--gold);
 
     }
-
-
     h3{
         font-size: 70px;
     color:var(--gold);
@@ -240,3 +238,75 @@
         text-align: center;
         text-align: center;
     }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+   /* Matches your navbar dark background */
+  padding: 10px;
+}
+
+.nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #222226;
+  color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.nav-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.nav-btn:hover {
+  border-color: #f3cf7a;
+  color: #f3cf7a;
+  box-shadow: 0 0 8px rgba(243, 207, 122, 0.15); 
+}
+.hero{
+    margin-top: 80px;
+    margin-left: 120px;
+    font-size: 40px;
+    display: flex;
+}
+.golden_txt{
+    color: var(--gold);
+    font-family: Arial, sans-serif;
+    font-size: .72rem;
+    letter-spacing: .22em;
+    font-weight: 700;
+}
+h1{
+    margin-top: 0;
+    color: var(--text);
+}
+h1 span{
+    color: var(--gold);
+}
+.hero-text{
+    margin-top: -40px;
+    color: var(--muted);
+    font-size: 16px;
+}
+.mjolnir_img{
+    width: 490px;
+    height: 480px;
+    margin-top: 0%;
+    margin-left: 70px;
+    animation: fadeIn 3s ease-in-out;
+    transform: rotate(-25deg);
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
