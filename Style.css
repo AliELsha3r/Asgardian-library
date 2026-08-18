@@ -25,15 +25,16 @@ a{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgb(172, 169, 158);
+    border-bottom: 1px solid var(--line);
     background: rgba(12,13,16,0.9);
     backdrop-filter: blur(14px);
     position: sticky;
     top: 0;
     z-index: 20;
+    transition: .4s ease;
 }
 .navBar:hover{
-    border-bottom: 1px solid #c7a76b ;
+    border-bottom: 1px solid var(--gold-light) ;
 }
 
 .library_title{
@@ -74,20 +75,43 @@ a{
 
 .loginBtn:hover{
     background: var(--gold-light);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
 }
 
-.btn_loginBtn,.btn_king,.btn_favorites,.btn_personal{
+.king{
+    background: transparent;
+    border-color: var(--line);
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: .8px;
+}
+
+.king:hover{
+    border-color: var(--gold);
+    color: var(--gold-light);
+    transform: translateY(-1px);
+}
+.buttons{
+    display: flex;
+    justify-content:center;
+    gap: 50px;
+}
+
+.btn_loginBtn,.btn_favorites,.btn_personal{
     text-decoration: none;
     border: 1px solid transparent;
     border-radius: 6px;
     padding: 11px 19px;
     color: white;
     transition: .2s ease;
-    background-color:   rgba(12,13,16,0.9);}
-    .btn_loginBtn:hover,.btn_king:hover,.btn_favorites:hover,.btn_personal:hover{
+    background-color:   rgba(12,13,16,0.9);
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: bold;
+}
+
+
+.btn_loginBtn:hover,.btn_favorites:hover,.btn_personal:hover{
+    color: #15130f;
     transform: translateY(-2px);
     background-color:  #c7a76b;
 }
-
 
