@@ -18,9 +18,11 @@ body {
   font-family: Georgia, "Times New Roman", serif;
 }
 #login_page {
-  /* background: linear-gradient(0, 0, 0, 0.5), url("material/1135533.jpg") center/cover no-repeat #0d0d0d; */
-  font-family: Georgia, "Times New Roman", serif;
+  background-image:linear-gradient(rgba(0, 0, 0, 0.5)) ,url("material/LogIN.BG.jpeg");
   animation: fadeIn 2s ease-in;
+}
+.login_header {
+    font-family: Georgia, "Times New Roman", serif;
 }
 #back_main {
   font-family: Georgia, "Times New Roman", Times, serif;
@@ -558,4 +560,38 @@ h1 span {
   display: inline-block;
   text-decoration: none;
   padding: 14px 24px;
+  margin-bottom: 100px;
+}
+
+.hook{
+    background-color: var(--bg-soft);
+    display: flex;
+    margin-bottom: 100px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.hook h2{
+    margin-top: 5px;
+    margin-left: 100px;
+    margin-bottom: 60px;
+    margin-right: 0px;
+}
+.hook p{
+    margin: 60px 100px 0px ;
+}
+h2{
+    font-size: 40px;
+    margin-right: 0%;
+}
+.hook_right{
+    flex: 1;
+    min-width: 0;
+    font-size: 16px;
+    word-spacing: 2px;
+    color: var(--muted);
+    padding-top: 40px;
+    padding-left: 200px;
 }
