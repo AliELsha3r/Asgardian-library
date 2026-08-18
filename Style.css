@@ -78,6 +78,17 @@ a{
     background: var(--gold-light);
     transform: translateY(-1px);
 }
+.registerBtn{
+    background: var(--gold);
+    color: #15130f;
+    font-weight: bold;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+.registerBtn:hover{
+    background: var(--gold-light);
+    transform: translateY(-1px);
+}
 
 .king{
     background: transparent;
@@ -155,4 +166,3 @@ a{
   color: #f3cf7a;        /* Icon color turns gold */
   box-shadow: 0 0 8px rgba(243, 207, 122, 0.15); /* Soft gold glow */
 }
-
