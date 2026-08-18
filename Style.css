@@ -12,6 +12,7 @@
   --shadow: 0 25px 70px rgba(0,0,0,.45);
 }
 body {
+    margin: 0;
     background-color: var(--bg);
     color: var(--text);
     font-family: Georgia, "Times New Roman", serif;
@@ -90,6 +91,7 @@ a{
     color: var(--gold-light);
     transform: translateY(-1px);
 }
+
 .buttons{
     display: flex;
     justify-content:center;
@@ -101,19 +103,20 @@ a{
     border: 1px solid transparent;
     border-radius: 6px;
     padding: 11px 19px;
-    color: white;
+    color: #15130f;
     transition: .2s ease;
-    background-color:   rgba(12,13,16,0.9);
+    background-color: var(--gold);
     font-family: Georgia, "Times New Roman", serif;
     font-weight: bold;
     margin-left: 390px;
+    margin-bottom: 2px;
 }
 
 
 .btn_loginBtn:hover{
     color: #15130f;
-    transform: translateY(-2px);
-    background-color:  #c7a76b;
+    transform: translateY(-1px);
+    background-color:  var(--gold-light);
 }
 
 
