@@ -3,59 +3,62 @@ const nameInput = document.getElementById("name_register");
 const emailInput = document.getElementById("email_register");
 const passwordInput = document.getElementById("pass_register");
 const submitBtn = document.querySelector(".register-submit");
+const msgBox = document.getElementById("msg_box");
+function showMessage(text, isError) {
+    msgBox.textContent = text;
+    if (isError) {
+        msgBox.className = "error-msg";
+    } else {
+        msgBox.className = "success-msg";
+    }
+}
 
-// 2. LISTEN FOR BUTTON CLICK
 submitBtn.addEventListener("click", function (e) {
-    e.preventDefault(); // Stops the form from refreshing the page
+    e.preventDefault();
 
-    // 3. GET VALUES FROM INPUT FIELDS
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
     const password = passwordInput.value;
 
-    // 4. SIMPLE VALIDATION CHECKS
     if (name === "" || email === "" || password === "") {
-        alert("Please fill in all fields.");
-        return; // Stop running code
+        showMessage("Even Loki fills out his forms! Do it now!", true);
+        return;
     }
 
     if (!email.includes("@") || !email.includes(".")) {
-        alert("Please enter a valid email address.");
+        showMessage("Heimdall sees no true mark! Thy email lacks '@' or '.'.", true);
         return;
     }
 
     if (password.length < 4) {
-        alert("Password must be at least 4 characters long.");
+        showMessage("Thy password lacks strength! Forge it with at least 4 characters.", true);
         return;
     }
 
-    // 5. LOAD EXISTING USERS FROM BROWSER MEMORY
-    let users = JSON.parse(localStorage.getItem("users"));
-    if (!users) {
-        users = []; // If no users exist yet, create an empty list
-    }
+    let users = JSON.parse(localStorage.getItem("users")) || [];
 
-    // 6. CHECK IF EMAIL IS ALREADY REGISTERED
     const userExists = users.some(function (user) {
         return user.email === email;
     });
 
     if (userExists) {
-        alert("An account with this email already exists!");
+        showMessage("A warrior with this email already walks the Hall of Records!", true);
         return;
     }
 
-    // 7. SAVE THE NEW USER
     const newUser = {
         name: name,
         email: email,
         password: password
     };
 
-    users.push(newUser); // Add new user to the array
-    localStorage.setItem("users", JSON.stringify(users)); // Save updated array
+    users.push(newUser);
+    localStorage.setItem("users", JSON.stringify(users));
+    localStorage.setItem("currentUser", JSON.stringify(newUser));
 
-    // 8. SUCCESS & REDIRECT
-    alert("Account created successfully!");
-    window.location.href = "Main.html";
+    showMessage("Thy name is etched in the scrolls of Valhalla!", false);
+
+    setTimeout(function () {
+        window.location.href = "Main.html";
+    }, 2000);
 });

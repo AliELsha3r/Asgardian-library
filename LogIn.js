@@ -24,7 +24,7 @@ submitBtn.addEventListener("click", function (e) {
 
     // 4. CHECK IF FIELDS ARE EMPTY
     if (email === "" || password === "") {
-      showMessage(`By Odin's eye! Leave no field blank, mortal.`,true)
+      showMessage(`Even Loki fills out his forms! Do it now!`,true)
         return; // Stop here
     }
 
@@ -44,8 +44,10 @@ submitBtn.addEventListener("click", function (e) {
         // Save who is currently logged in
         localStorage.setItem("currentUser", JSON.stringify(foundUser));
         
-        showMessage("Welcome to Asgard, " + foundUser.name + "!",false);
-        window.location.href = "Home.html"; // Go to main hall
+        setTimeout(function () {
+        window.location.href = "Home.html";
+    }, 2000);showMessage("Welcome to Asgard, " + foundUser.name + "!",false);
+        
     } else {
         showMessage("Loki's trickery! The gates of Asgard reject these credentials.",true);
     }

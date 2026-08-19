@@ -716,7 +716,7 @@ h1 span {
     position: relative;
     flex: 0 0 190px;
     scroll-snap-align: start;
-    margin: 0;
+    margin-left: 20px;
 }
 
 .book-link { display: block; }
