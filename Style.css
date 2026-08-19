@@ -632,13 +632,18 @@ h1 span {
     outline: none;
 }
 
-.flowing-books {
+.carousel-books {
+    overflow: hidden;
     scroll-snap-type: none;
     scroll-behavior: auto;
-    cursor: grab;
 }
 
-.flowing-books:hover { cursor: default; }
+.book-track {
+    display: flex;
+    gap: 22px;
+    width: max-content;
+    will-change: transform;
+}
 
 .book-cover {
     position: relative;
@@ -684,6 +689,14 @@ h1 span {
 .book-yggdrasil .book-cover { background: linear-gradient(145deg, #5e4e29, #21190d); }
 .book-valkyrie .book-cover { background: linear-gradient(145deg, #4d3448, #1a111c); }
 .book-ragnarok .book-cover { background: linear-gradient(145deg, #55413b, #180e0d); }
+.book-freyja .book-cover { background: linear-gradient(145deg, #77512e, #2c180e); }
+.book-heimdall .book-cover { background: linear-gradient(145deg, #3c5960, #122126); }
+.book-frigg .book-cover { background: linear-gradient(145deg, #4b465e, #171524); }
+.book-tyr .book-cover { background: linear-gradient(145deg, #526064, #182023); }
+.book-hel .book-cover { background: linear-gradient(145deg, #393b4b, #111219); }
+.book-norns .book-cover { background: linear-gradient(145deg, #704638, #25120f); }
+.book-sif .book-cover { background: linear-gradient(145deg, #6b5e2a, #25200d); }
+.book-jotun .book-cover { background: linear-gradient(145deg, #425060, #131b25); }
 
 @media (max-width: 760px) {
     .collection { padding: 75px 0 85px; }
