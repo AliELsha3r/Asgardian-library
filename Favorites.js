@@ -1,146 +1,43 @@
 const FAVORITES_STORAGE_KEY = "favorites";
-
-const books = [
-    { id: 1, name: "Odin's Wisdom", className: "book-odin" },
-    { id: 2, name: "Thor Unbound", className: "book-thor" },
-    { id: 3, name: "The Loki Code", className: "book-loki" },
-    { id: 4, name: "Roots of Yggdrasil", className: "book-yggdrasil" },
-    { id: 5, name: "Flight of the Valkyries", className: "book-valkyrie" },
-    { id: 6, name: "Before Ragnarök", className: "book-ragnarok" },
-    { id: 7, name: "Freyja's Gold", className: "book-freyja" },
-    { id: 8, name: "The Bifrost Watcher", className: "book-heimdall" },
-    { id: 9, name: "Frigg's Foresight", className: "book-frigg" },
-    { id: 10, name: "The Hand of Tyr", className: "book-tyr" },
-    { id: 11, name: "Hel's Quiet Kingdom", className: "book-hel" },
-    { id: 12, name: "Threads of the Norns", className: "book-norns" },
-    { id: 13, name: "Sif's Harvest", className: "book-sif" },
-    { id: 14, name: "Giants of Jötunheim", className: "book-jotun" }
-];
-
 function getFavorites() {
     try {
-        const savedFavorites = JSON.parse(localStorage.getItem(FAVORITES_STORAGE_KEY));
-
-        if (!Array.isArray(savedFavorites)) {
-            return [];
-        }
-
-        return [...new Set(savedFavorites.map(Number))]
-            .filter(id => books.some(book => book.id === id));
-    } catch {
-        return [];
-    }
+        const saved = JSON.parse(localStorage.getItem(FAVORITES_STORAGE_KEY));
+        return Array.isArray(saved) ? [...new Set(saved.map(String))].filter((id) => Library.getBooks().some((book) => book.id === id)) : [];
+    } catch { return []; }
 }
-// getFavorites() -> cleans the list from any duplicates or undefined books
 let favorites = getFavorites();
-
-function saveFavorites() {
-    localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favorites));
-}
-
-
-// Add or remove a favorite
+function saveFavorites() { localStorage.setItem(FAVORITES_STORAGE_KEY, JSON.stringify(favorites)); }
 function updateFavoriteButton(button, isFavorite) {
-    const symbol = button.querySelector("span") || button;
-    symbol.textContent = isFavorite ? "♥" : "♡";
+    (button.querySelector("span") || button).textContent = isFavorite ? "♥" : "♡";
     button.classList.toggle("is-favorite", isFavorite);
     button.setAttribute("aria-pressed", String(isFavorite));
     button.title = isFavorite ? "Remove from favorites" : "Add to favorites";
 }
-
 function syncHomeFavoriteButtons() {
-    document.querySelectorAll(".favorite-button[onclick*='addFavorite']").forEach(button => {
-        const match = button.getAttribute("onclick").match(/addFavorite\((\d+)/);
-
-        if (match) {
-            updateFavoriteButton(button, favorites.includes(Number(match[1])));
-        }
-    });
+    favorites = getFavorites();
+    document.querySelectorAll(".favorite-button[data-book-id]").forEach((button) => updateFavoriteButton(button, favorites.includes(button.dataset.bookId)));
 }
-
-function addFavorite(bookNumber, button) {
-    bookNumber = Number(bookNumber);
-
-    // If the book is already a favorite
-    if (favorites.includes(bookNumber)) {
-
-        // Remove it if it is already favorited
-        favorites = favorites.filter(id => id !== bookNumber);
-
-    } else {
-
-        // Add it
-        favorites.push(bookNumber);
-
-    }
-
+function addFavorite(bookId, button) {
+    bookId = String(bookId);
+    favorites = getFavorites();
+    favorites = favorites.includes(bookId) ? favorites.filter((id) => id !== bookId) : [...favorites, bookId];
     saveFavorites();
-    updateFavoriteButton(button, favorites.includes(bookNumber));
+    updateFavoriteButton(button, favorites.includes(bookId));
 }
-
-
-// Remove favorite from Favorites page
-
-function removeFavorite(bookNumber) {
-    bookNumber = Number(bookNumber);
-    favorites = favorites.filter(id => id !== bookNumber);
+function removeFavorite(bookId) {
+    favorites = getFavorites().filter((id) => id !== String(bookId));
     saveFavorites();
     displayFavorites();
 }
-
-
-// Display favorites
-
 function displayFavorites() {
-
-    let container =
-        document.getElementById("favorites_container");
-
-    if (!container) {
-        return;
-    }
-
+    const container = document.querySelector("#favorites_container");
+    if (!container) return;
     favorites = getFavorites();
     container.innerHTML = "";
-
-    if (favorites.length === 0) {
-
-        container.innerHTML = `
-            <p class="no-favorites">
-                No relics adorn these sacred halls.
-            </p>
-        `;
-
-        return;
-    }
-
-    for (let id of favorites) {
-
-        let book = books.find(book => book.id === id);
-
-        if (!book) {
-            continue;
-        }
-
-        container.innerHTML += `
-            <article class="book-card ${book.className}">
-
-                <div class="book-cover">
-
-                    <h3>${book.name}</h3>
-
-                </div>
-
-                <button class="favorite-button" onclick="removeFavorite(${book.id})">
-                    ×
-                </button>
-
-            </article>`;
-    }
+    if (!favorites.length) { container.innerHTML = '<p class="no-favorites">No relics adorn these sacred halls.</p>'; return; }
+    favorites.forEach((id) => {
+        const book = Library.getBooks().find((item) => item.id === id);
+        if (book) container.appendChild(Library.createBookCard(book, { removable: true }));
+    });
 }
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    syncHomeFavoriteButtons();
-    displayFavorites();
-});
+document.addEventListener("DOMContentLoaded", () => { syncHomeFavoriteButtons(); displayFavorites(); });

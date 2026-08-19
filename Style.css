@@ -1246,6 +1246,56 @@ h1 span {
 
 
 /* =========================================================
+    11. Admin style
+   ========================================================= */
+
+.admin_page{
+    display: flex;
+    justify-content: center;
+}
+
+.Admin_header{
+    margin: 70px 60px 0px;
+
+    font-size: 50px;
+    font-weight: bold;
+}
+
+h5{
+    margin-top: -40px;
+    margin-left: 140px;
+}
+
+.Admin_home {
+    margin-top: 50px;
+    margin-right: 50px;
+
+    padding: 10px 36px;
+
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    background-color: var(--bg-soft);
+
+    color: var(--gold);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+
+    transition: 0.2s ease;
+
+}
+
+.Admin_home:hover {
+    background-color: var(--gold);
+    color: var(--bg);
+
+    transform: translateY(-2px);
+}
+
+/* =========================================================
    FADE IN
    ========================================================= */
 
@@ -1257,4 +1307,171 @@ h1 span {
     100% {
         opacity: 1;
     }
+}
+
+/* =========================================================
+   12. KING OF ASGARD ADMINISTRATION
+   ========================================================= */
+
+.admin-shell {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 70px 6% 90px;
+}
+
+.admin-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    padding-bottom: 42px;
+    border-bottom: 1px solid rgba(225, 201, 144, 0.28);
+}
+
+.admin-hero h1 {
+    margin: 10px 0;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: .96;
+}
+
+.admin-intro {
+    max-width: 500px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.Admin_home {
+    display: inline-block;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, .9fr) minmax(360px, 1.1fr);
+    gap: 28px;
+    margin-top: 38px;
+}
+
+.admin-panel {
+    padding: 30px;
+    border: 1px solid rgba(225, 201, 144, 0.22);
+    background: rgba(12, 13, 16, .82);
+    box-shadow: var(--shadow);
+}
+
+.admin-panel h2 {
+    margin: 8px 0 26px;
+    font-size: 32px;
+}
+
+.admin-panel label {
+    display: block;
+    margin: 17px 0 7px;
+    color: var(--gold-light);
+    font-size: 14px;
+}
+
+.admin-panel label span {
+    color: var(--muted);
+}
+
+.admin-panel input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    background: rgba(0, 0, 0, .28);
+    color: var(--text);
+    font: inherit;
+}
+
+.admin-panel input:focus {
+    border-color: var(--gold);
+    outline: 2px solid rgba(199, 167, 107, .18);
+}
+
+.admin-submit,
+.remove-book {
+    border: 1px solid var(--gold);
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Georgia, "Times New Roman", serif;
+    transition: .2s ease;
+}
+
+.admin-submit {
+    width: 100%;
+    margin-top: 27px;
+    padding: 13px 18px;
+    background: var(--gold);
+    color: var(--bg);
+    font-weight: bold;
+}
+
+.admin-submit:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+}
+
+.admin-message {
+    min-height: 22px;
+    margin: 16px 0 0;
+    font-size: 14px;
+}
+
+.admin-book-list {
+    max-height: 500px;
+    margin: 20px 0 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+}
+
+.admin-book-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px 4px;
+    border-bottom: 1px solid var(--line);
+}
+
+.admin-book-rune {
+    width: 26px;
+    color: var(--gold-light);
+    font-size: 24px;
+    text-align: center;
+}
+
+.admin-book-details {
+    display: grid;
+    flex: 1;
+    gap: 4px;
+}
+
+.admin-book-details small {
+    color: var(--muted);
+}
+
+.remove-book {
+    padding: 8px 11px;
+    background: transparent;
+    color: var(--gold-light);
+}
+
+.remove-book:hover {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+.book-custom .book-cover {
+    background: linear-gradient(145deg, #4c3a22, #17120b);
+}
+
+@media (max-width: 760px) {
+    .admin-shell { padding-top: 40px; }
+    .admin-hero { align-items: start; flex-direction: column; }
+    .admin-grid { grid-template-columns: 1fr; }
+    .admin-panel { padding: 22px; }
 }
