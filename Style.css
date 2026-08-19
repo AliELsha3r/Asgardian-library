@@ -63,7 +63,7 @@
     background-image: url("material/ChatGPT Image Aug 19, 2026, 08_58_14 PM.png");
 }
 .personal_info_page{
-
+    animation: fadeIn 1.5s ease-in;
     background-image:url("material/new personal.png");
     background-size: cover;
     background-position: center;
