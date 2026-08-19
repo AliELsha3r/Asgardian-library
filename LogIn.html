@@ -1,33 +1,30 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Log In | Asgardian Library</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <h3 class="login_header">Welcome,<br> Citizen of Asgard.</h3>
-    <body id="login_page">
-        <div class="login_info">
-            <form class="login">
-                <label id="text_email" name="email" >E-mail</label><br>
-                <input id="email" name="email" type="email" placeholder="you@example.com"><br><br>
-
-                <label id="text_pass"name="pass"> Password</label><br>
-                <input id="pass" name="pass" type="password" placeholder="•••••••"><br><br>
-                
-                <button type="submit" id="sub_btn">
-                    Enter To Asgard
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Log In | Asgardian Library</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+               <h3 class="login_header">Welcome,<br> Citizen of Asgard.</h3>
+        <body id="login_page">
+            <div class="login_info">
+                <form class="login">
+                    <label id="text_email" name="email" >E-mail</label><br>
+                    <input id="email" name="email" type="email" placeholder="you@example.com"><br><br>
+                    <label id="text_pass"name="pass"> Password</label><br>
+                    <input id="pass" name="pass" type="password" placeholder="•••••••"><br><br>
+                    <p id="msg_box"></p>
+                    <button type="submit" id="sub_btn">
+                        Enter To Asgard
+                    </button>
+                </form>
+            </div>
+            <a href="Main.html">
+                <button id="back_main">
+                    ← Back to main hall
                 </button>
-            </form>
-
-        </div>
-        <a href="Main.html">
-            <button id="back_main">
-                ← Back to main haul
-            </button>
-        </a>
-
-        <script src ="LogIn.js"></script>
-    </body>
-    </html>
+            </a>
+            <script src ="LogIn.js"></script>
+        </body>
+        </html>

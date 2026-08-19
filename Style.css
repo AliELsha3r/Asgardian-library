@@ -813,3 +813,25 @@ h1 span {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+
+/* Message Box Style */
+#msg_box {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    min-height: 20px; /* Reserves space so elements don't jump around */
+}
+
+/* Red color for errors */
+#msg_box.error-msg {
+    color: var(--danger);
+    
+   
+}
+
+/* Green color for success */
+#msg_box.success-msg {
+    color: var(--gold);
+}
