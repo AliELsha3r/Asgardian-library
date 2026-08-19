@@ -11,116 +11,110 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ---------------------------------------------------------
+    /* =========================================================
        BOOKS
-       --------------------------------------------------------- */
+       ========================================================= */
 
-    const originalBooks = Array.from(track.children);
+    const books = Array.from(track.children);
 
-    const totalBooks = originalBooks.length;
+    const totalBooks = books.length;
+
+    /*
+       Number of books visible at the same time.
+       Your design currently shows 4.
+    */
+    const visibleBooks = 4;
+
+
+    /*
+       The furthest position we can move to.
+       Example:
+
+       14 books
+       4 visible
+
+       maxIndex = 14 - 4 = 10
+    */
+
+    const maxIndex = Math.max(totalBooks - visibleBooks, 0);
 
     let index = 0;
 
     let timer = null;
 
 
-    /* ---------------------------------------------------------
-       CLONE FIRST FEW BOOKS
-       This allows the carousel to loop smoothly.
-       --------------------------------------------------------- */
-
-    const visibleBooks = 4;
-
-    originalBooks
-        .slice(0, visibleBooks)
-        .forEach((book) => {
-            track.appendChild(book.cloneNode(true));
-        });
-
-
-    /* ---------------------------------------------------------
-       FIND THE DISTANCE BETWEEN BOOKS
-       --------------------------------------------------------- */
+    /* =========================================================
+       FIND BOOK MOVEMENT DISTANCE
+       ========================================================= */
 
     function getStep() {
 
-        const book = originalBooks[0];
+        const firstBook = books[0];
 
-        if (!book) {
+        if (!firstBook) {
             return 0;
         }
 
-        const style = window.getComputedStyle(track);
+        const trackStyle = window.getComputedStyle(track);
 
-        const gap = parseFloat(style.columnGap) || 0;
+        const gap = parseFloat(trackStyle.columnGap) || 0;
 
-        return book.offsetWidth + gap;
+        return firstBook.offsetWidth + gap;
     }
 
 
-    /* ---------------------------------------------------------
-       MOVE THE TRACK
-       --------------------------------------------------------- */
+    /* =========================================================
+       SHOW CURRENT SLIDE
+       ========================================================= */
 
     function showSlide(animate = true) {
 
         const step = getStep();
 
-        track.style.transition = animate
-            ? "transform 750ms ease"
-            : "none";
+        track.style.transition =
+            animate ? "transform 750ms ease" : "none";
 
         track.style.transform =
             `translateX(-${index * step}px)`;
     }
 
 
-    /* ---------------------------------------------------------
-       MOVE LEFT / RIGHT
-       --------------------------------------------------------- */
+    /* =========================================================
+       MOVE CAROUSEL
+       ========================================================= */
 
     function move(direction) {
 
         index += direction;
 
 
-        /* Going before the first book */
+        /*
+           We went past the LAST position.
+           Go back to the FIRST position.
+        */
 
-        if (index < 0) {
-
-            index = totalBooks - 1;
-
-            showSlide(false);
-
-            return;
+        if (index > maxIndex) {
+            index = 0;
         }
 
 
-        /* Normal movement */
+        /*
+           We went before the FIRST position.
+           Go to the LAST position.
+        */
+
+        if (index < 0) {
+            index = maxIndex;
+        }
+
 
         showSlide(true);
     }
 
 
-    /* ---------------------------------------------------------
-       INFINITE LOOP
-       When we reach the cloned books, jump back to the beginning.
-       --------------------------------------------------------- */
-
-    track.addEventListener("transitionend", () => {
-
-        if (index >= totalBooks) {
-
-            index = 0;
-
-            showSlide(false);
-        }
-    });
-
-
-    /* ---------------------------------------------------------
+    /* =========================================================
        BUTTONS
-       --------------------------------------------------------- */
+       ========================================================= */
 
     previous.addEventListener("click", () => {
 
@@ -138,9 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ---------------------------------------------------------
+    /* =========================================================
        AUTO PLAY
-       --------------------------------------------------------- */
+       ========================================================= */
 
     function startAutoPlay() {
 
@@ -163,41 +157,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
-    /* ---------------------------------------------------------
-       STOP AUTO PLAY WHEN MOUSE IS OVER THE BOOKS
-       --------------------------------------------------------- */
+    /* =========================================================
+       STOP AUTO PLAY WHEN HOVERING
+       ========================================================= */
 
     carousel.addEventListener("mouseenter", () => {
-
         clearInterval(timer);
     });
 
 
     carousel.addEventListener("mouseleave", () => {
-
         startAutoPlay();
     });
 
 
-    /* ---------------------------------------------------------
-       STOP AUTO PLAY WHEN USER IS USING KEYBOARD
-       --------------------------------------------------------- */
+    /* =========================================================
+       STOP AUTO PLAY WHEN FOCUSING
+       ========================================================= */
 
     carousel.addEventListener("focusin", () => {
-
         clearInterval(timer);
     });
 
 
     carousel.addEventListener("focusout", () => {
-
         startAutoPlay();
     });
 
 
-    /* ---------------------------------------------------------
+    /* =========================================================
        RESPONSIVE
-       --------------------------------------------------------- */
+       ========================================================= */
 
     window.addEventListener("resize", () => {
 
@@ -205,9 +195,128 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* ---------------------------------------------------------
+    /* =========================================================
+       FAVORITES
+       ========================================================= */
+
+    const favoriteButtons =
+        document.querySelectorAll(".favorite-button");
+
+
+    favoriteButtons.forEach(button => {
+
+        const bookId =
+            button.dataset.bookId;
+
+
+        /*
+           When the page opens,
+           show whether the book is already a favorite.
+        */
+
+        updateFavoriteButton(button);
+
+
+        /*
+           When the heart is clicked
+        */
+
+        button.addEventListener("click", () => {
+
+            toggleFavorite(bookId);
+
+            updateFavoriteButton(button);
+        });
+
+    });
+
+
+    /* =========================================================
+       UPDATE HEART
+       ========================================================= */
+
+    function updateFavoriteButton(button) {
+
+        const bookId =
+            button.dataset.bookId;
+
+
+        const favorites =
+            JSON.parse(
+                localStorage.getItem("favorites")
+            ) || [];
+
+
+        if (favorites.includes(bookId)) {
+
+            button.textContent = "♥";
+
+            button.classList.add("is-favorite");
+
+            button.setAttribute(
+                "aria-label",
+                "Remove from favorites"
+            );
+
+        } else {
+
+            button.textContent = "♡";
+
+            button.classList.remove("is-favorite");
+
+            button.setAttribute(
+                "aria-label",
+                "Add to favorites"
+            );
+        }
+    }
+
+
+    /* =========================================================
+       ADD / REMOVE FAVORITE
+       ========================================================= */
+
+    function toggleFavorite(bookId) {
+
+        let favorites =
+            JSON.parse(
+                localStorage.getItem("favorites")
+            ) || [];
+
+
+        if (favorites.includes(bookId)) {
+
+            /*
+               Already a favorite
+               → remove it
+            */
+
+            favorites =
+                favorites.filter(
+                    id => id !== bookId
+                );
+
+        } else {
+
+            /*
+               Not a favorite
+               → add it
+            */
+
+            favorites.push(bookId);
+        }
+
+
+        localStorage.setItem(
+            "favorites",
+            JSON.stringify(favorites)
+        );
+    }
+
+
+    /* =========================================================
        INITIAL POSITION
-       --------------------------------------------------------- */
+       ========================================================= */
 
     showSlide(false);
 
