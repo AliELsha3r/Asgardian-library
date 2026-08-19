@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="Style.css" />
   </head>
   <body>
-    <script src="Main.js"></script>
+    <script src="Main.js" defer></script>
 
     <header class="navBar">
       <div class="library_title">
@@ -53,6 +53,46 @@
                 Norse mythology is filled with stories about sacrifice, <br>destiny,
                 courage and the price of knowledge.
             </p>
+        </section>
+
+        <section class="collection" aria-labelledby="collection-title">
+          <div class="collection-heading">
+            <div>
+              <p class="golden_txt">FROM THE ASGARDIAN SHELVES</p>
+              <h2 id="collection-title">Stories worth carrying<br>between realms.</h2>
+            </div>
+            <div class="slider-controls" aria-label="Book collection controls">
+              <button class="slider-button" type="button" data-slider-prev aria-label="Show previous books">←</button>
+              <button class="slider-button" type="button" data-slider-next aria-label="Show next books">→</button>
+            </div>
+          </div>
+
+          <div class="book-slider" data-book-slider tabindex="0" aria-label="Featured book collection">
+            <article class="book-card book-odin">
+              <div class="book-cover"><span class="book-rune">ᚨ</span><span class="book-kicker">The Allfather</span><h3>Odin's<br>Wisdom</h3><span class="book-author">The Nine Realms</span></div>
+              <p>Odin's Wisdom</p>
+            </article>
+            <article class="book-card book-thor">
+              <div class="book-cover"><span class="book-rune">ᚦ</span><span class="book-kicker">Tales of Thunder</span><h3>Thor<br>Unbound</h3><span class="book-author">A Saga Collection</span></div>
+              <p>Thor Unbound</p>
+            </article>
+            <article class="book-card book-loki">
+              <div class="book-cover"><span class="book-rune">ᛚ</span><span class="book-kicker">A Trickster's Tale</span><h3>The<br>Loki Code</h3><span class="book-author">Myths Retold</span></div>
+              <p>The Loki Code</p>
+            </article>
+            <article class="book-card book-yggdrasil">
+              <div class="book-cover"><span class="book-rune">ᛇ</span><span class="book-kicker">The World Tree</span><h3>Roots of<br>Yggdrasil</h3><span class="book-author">The Nine Realms</span></div>
+              <p>Roots of Yggdrasil</p>
+            </article>
+            <article class="book-card book-valkyrie">
+              <div class="book-cover"><span class="book-rune">ᚹ</span><span class="book-kicker">Daughters of Battle</span><h3>Flight of the<br>Valkyries</h3><span class="book-author">Northern Legends</span></div>
+              <p>Flight of the Valkyries</p>
+            </article>
+            <article class="book-card book-ragnarok">
+              <div class="book-cover"><span class="book-rune">ᚱ</span><span class="book-kicker">The Final Winter</span><h3>Before<br>Ragnarök</h3><span class="book-author">Saga of Fate</span></div>
+              <p>Before Ragnarök</p>
+            </article>
+          </div>
         </section>
     </main>
   </body>

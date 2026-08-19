@@ -527,3 +527,168 @@ h1 span {
     color: var(--bg);
     transform: translateY(-2px);
 }
+
+
+/* =========================================================
+9. FEATURED BOOK COLLECTION
+========================================================= */
+
+.collection {
+    padding: 105px 0 115px;
+    overflow: hidden;
+}
+
+.collection-heading {
+    max-width: 1180px;
+    margin: 0 auto 38px;
+    padding: 0 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 32px;
+}
+
+.collection h2 {
+    margin: 8px 0 0;
+    font-size: clamp(34px, 4vw, 54px);
+    line-height: 1.04;
+}
+
+.slider-controls {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.slider-button {
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text);
+    font-size: 23px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.slider-button:hover,
+.slider-button:focus-visible {
+    border-color: var(--gold);
+    background: var(--gold);
+    color: var(--bg);
+    outline: none;
+}
+
+.book-slider {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    padding: 8px max(6%, calc((100% - 1180px) / 2)) 18px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.book-slider::-webkit-scrollbar { display: none; }
+
+.book-slider:focus-visible {
+    outline: 1px solid var(--gold);
+    outline-offset: -1px;
+}
+
+.book-card {
+    position: relative;
+    flex: 0 0 190px;
+    scroll-snap-align: start;
+    margin: 0;
+}
+
+.book-link { display: block; }
+
+.favorite-button {
+    position: absolute;
+    top: 11px;
+    right: 11px;
+    z-index: 2;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid rgba(225, 201, 144, 0.45);
+    border-radius: 50%;
+    background: rgba(12, 13, 16, 0.58);
+    color: var(--gold-light);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.favorite-button:hover,
+.favorite-button:focus-visible {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--bg);
+    outline: none;
+}
+
+.flowing-books {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+    cursor: grab;
+}
+
+.flowing-books:hover { cursor: default; }
+
+.book-cover {
+    position: relative;
+    height: 274px;
+    box-sizing: border-box;
+    padding: 23px 20px;
+    overflow: hidden;
+    border: 1px solid rgba(225, 201, 144, 0.28);
+    box-shadow: 12px 15px 26px rgba(0, 0, 0, 0.36);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.book-cover::before {
+    content: "";
+    position: absolute;
+    inset: 7px;
+    border: 1px solid rgba(225, 201, 144, 0.25);
+    pointer-events: none;
+}
+
+.book-cover::after {
+    content: "";
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    right: -65px;
+    bottom: -65px;
+    border: 1px solid rgba(225, 201, 144, 0.35);
+    border-radius: 50%;
+}
+
+.book-card:hover .book-cover { transform: translateY(-9px) rotate(-1.5deg); box-shadow: 15px 24px 34px rgba(0, 0, 0, 0.5); }
+.book-rune, .book-kicker, .book-cover h3, .book-author { position: relative; z-index: 1; display: block; }
+.book-rune { color: var(--gold-light); font-size: 30px; margin-bottom: 22px; }
+.book-kicker, .book-author { font: 700 8px Arial, sans-serif; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(241, 238, 231, 0.76); }
+.book-cover h3 { margin: 13px 0 18px; color: #f8f3e7; font-size: 27px; line-height: 0.96; }
+.book-author { color: var(--gold-light); }
+.book-card > p { margin: 15px 0 0; font-size: 16px; color: var(--text); }
+
+.book-odin .book-cover { background: linear-gradient(145deg, #19232d, #071015); }
+.book-thor .book-cover { background: linear-gradient(145deg, #652f22, #1b1011); }
+.book-loki .book-cover { background: linear-gradient(145deg, #38503a, #101d16); }
+.book-yggdrasil .book-cover { background: linear-gradient(145deg, #5e4e29, #21190d); }
+.book-valkyrie .book-cover { background: linear-gradient(145deg, #4d3448, #1a111c); }
+.book-ragnarok .book-cover { background: linear-gradient(145deg, #55413b, #180e0d); }
+
+@media (max-width: 760px) {
+    .collection { padding: 75px 0 85px; }
+    .collection-heading { align-items: start; }
+    .collection h2 { font-size: 34px; }
+    .slider-controls { display: none; }
+    .book-slider { padding-left: 6%; padding-right: 6%; }
+}
