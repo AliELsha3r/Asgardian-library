@@ -21,9 +21,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const title = data.get("title").trim();
         const author = data.get("author").trim();
         const subtitle = data.get("subtitle").trim();
+        const link = data.get("link").trim();
         const rune = data.get("rune").trim() || "ᛉ";
-        if (!title || !author || !subtitle) return showMessage("Please complete the title, chronicle, and author fields.", true);
-        Library.addBook({ title, author, subtitle, rune });
+        if (!title || !author || !subtitle || !link) return showMessage("Please complete the title, chronicle, author, and book link fields.", true);
+        if (!Library.isValidBookLink(link)) return showMessage("Please enter a valid http or https book link.", true);
+        Library.addBook({ title, author, subtitle, link, rune });
         form.reset();
         showMessage(`“${title}” has been placed in the library.`);
         renderBooks();
