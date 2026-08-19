@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="Style.css">
 </head>
 <body bgcolor="#0c0d10" text="ffffff">
-    <script src ="Home.js"></script>
+    <script src="Home.js" defer></script>
     <header class="navBar">
         <div class="library_title">
             <span class="brand_mark">ᛉ</span>
@@ -44,5 +44,121 @@
             </nav>
         </div>
     </header>
+    <main>
+        <section class="collection home-collection" aria-labelledby="home-collection-title">
+            <div class="collection-heading">
+                <div>
+                    <p class="golden_txt">YOUR ASGARDIAN COLLECTION</p>
+                    <h2 id="home-collection-title">Choose a story<br>to begin.</h2>
+                </div>
+                <div class="slider-controls" aria-label="Book collection controls">
+                    <button class="slider-button" type="button" data-home-prev aria-label="Show previous books">←</button>
+                    <button class="slider-button" type="button" data-home-next aria-label="Show next books">→</button>
+                </div>
+            </div>
+
+            <div class="book-slider carousel-books" data-book-carousel aria-label="Book collection">
+                <!-- Replace each # below with the page or URL that book should open. -->
+                <article class="book-card book-odin">
+                    <a class="book-link" href="#" aria-label="Open Odin's Wisdom">
+                        <div class="book-cover"><span class="book-rune">ᚨ</span><span class="book-kicker">The Allfather</span><h3>Odin's<br>Wisdom</h3><span class="book-author">The Nine Realms</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add Odin's Wisdom to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>Odin's Wisdom</p>
+                </article>
+                <article class="book-card book-thor">
+                    <a class="book-link" href="#" aria-label="Open Thor Unbound">
+                        <div class="book-cover"><span class="book-rune">ᚦ</span><span class="book-kicker">Tales of Thunder</span><h3>Thor<br>Unbound</h3><span class="book-author">A Saga Collection</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add Thor Unbound to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>Thor Unbound</p>
+                </article>
+                <article class="book-card book-loki">
+                    <a class="book-link" href="#" aria-label="Open The Loki Code">
+                        <div class="book-cover"><span class="book-rune">ᛚ</span><span class="book-kicker">A Trickster's Tale</span><h3>The<br>Loki Code</h3><span class="book-author">Myths Retold</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add The Loki Code to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>The Loki Code</p>
+                </article>
+                <article class="book-card book-yggdrasil">
+                    <a class="book-link" href="#" aria-label="Open Roots of Yggdrasil">
+                        <div class="book-cover"><span class="book-rune">ᛇ</span><span class="book-kicker">The World Tree</span><h3>Roots of<br>Yggdrasil</h3><span class="book-author">The Nine Realms</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add Roots of Yggdrasil to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>Roots of Yggdrasil</p>
+                </article>
+                <article class="book-card book-valkyrie">
+                    <a class="book-link" href="#" aria-label="Open Flight of the Valkyries">
+                        <div class="book-cover"><span class="book-rune">ᚹ</span><span class="book-kicker">Daughters of Battle</span><h3>Flight of the<br>Valkyries</h3><span class="book-author">Northern Legends</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add Flight of the Valkyries to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>Flight of the Valkyries</p>
+                </article>
+                <article class="book-card book-ragnarok">
+                    <a class="book-link" href="#" aria-label="Open Before Ragnarok">
+                        <div class="book-cover"><span class="book-rune">ᚱ</span><span class="book-kicker">The Final Winter</span><h3>Before<br>Ragnarök</h3><span class="book-author">Saga of Fate</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add Before Ragnarok to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>Before Ragnarök</p>
+                </article>
+                <article class="book-card book-freyja">
+                    <a class="book-link" href="#" aria-label="Open Freyja's Gold">
+                        <div class="book-cover"><span class="book-rune">ᚠ</span><span class="book-kicker">Goddess of Seiðr</span><h3>Freyja's<br>Gold</h3><span class="book-author">Northern Legends</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add Freyja's Gold to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>Freyja's Gold</p>
+                </article>
+                <article class="book-card book-heimdall">
+                    <a class="book-link" href="#" aria-label="Open The Bifrost Watcher">
+                        <div class="book-cover"><span class="book-rune">ᚺ</span><span class="book-kicker">Guardian of the Bridge</span><h3>The Bifrost<br>Watcher</h3><span class="book-author">A Realm Chronicle</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add The Bifrost Watcher to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>The Bifrost Watcher</p>
+                </article>
+                <article class="book-card book-frigg">
+                    <a class="book-link" href="#" aria-label="Open Frigg's Foresight">
+                        <div class="book-cover"><span class="book-rune">ᚹ</span><span class="book-kicker">Queen of Asgard</span><h3>Frigg's<br>Foresight</h3><span class="book-author">The Weaver's Tale</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add Frigg's Foresight to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>Frigg's Foresight</p>
+                </article>
+                <article class="book-card book-tyr">
+                    <a class="book-link" href="#" aria-label="Open The Hand of Tyr">
+                        <div class="book-cover"><span class="book-rune">ᛏ</span><span class="book-kicker">Oaths and Courage</span><h3>The Hand<br>of Tyr</h3><span class="book-author">Saga of Justice</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add The Hand of Tyr to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>The Hand of Tyr</p>
+                </article>
+                <article class="book-card book-hel">
+                    <a class="book-link" href="#" aria-label="Open Hel's Quiet Kingdom">
+                        <div class="book-cover"><span class="book-rune">ᚺ</span><span class="book-kicker">Beyond the Veil</span><h3>Hel's Quiet<br>Kingdom</h3><span class="book-author">The Underworld</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add Hel's Quiet Kingdom to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>Hel's Quiet Kingdom</p>
+                </article>
+                <article class="book-card book-norns">
+                    <a class="book-link" href="#" aria-label="Open Threads of the Norns">
+                        <div class="book-cover"><span class="book-rune">ᚾ</span><span class="book-kicker">Fate's Keepers</span><h3>Threads of<br>the Norns</h3><span class="book-author">A Tale of Fate</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add Threads of the Norns to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>Threads of the Norns</p>
+                </article>
+                <article class="book-card book-sif">
+                    <a class="book-link" href="#" aria-label="Open Sif's Harvest">
+                        <div class="book-cover"><span class="book-rune">ᛋ</span><span class="book-kicker">Fields of Asgard</span><h3>Sif's<br>Harvest</h3><span class="book-author">Tales of Midgard</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add Sif's Harvest to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>Sif's Harvest</p>
+                </article>
+                <article class="book-card book-jotun">
+                    <a class="book-link" href="#" aria-label="Open Giants of Jotunheim">
+                        <div class="book-cover"><span class="book-rune">ᛃ</span><span class="book-kicker">Beyond Asgard</span><h3>Giants of<br>Jötunheim</h3><span class="book-author">The Old Enemies</span></div>
+                    </a>
+                    <button class="favorite-button" type="button" aria-label="Add Giants of Jotunheim to favorites" title="Add to favorites"><span aria-hidden="true">♡</span></button>
+                    <p>Giants of Jötunheim</p>
+                </article>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
