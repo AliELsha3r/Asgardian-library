@@ -51,7 +51,17 @@
     color: #5c4009;
     font-family: Georgia, serif
 }
-
+#admin_body{
+    width: 100%;
+  min-height: 100vh;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url("material/ChatGPT Image Aug 19, 2026, 08_58_14 PM.png");
+}
 .personal_info_page{
 
     background-image:url("material/new personal.png");
