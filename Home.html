@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="Style.css" />
   </head>
   <body bgcolor="#0c0d10" text="ffffff">
-    <script src="Home.js"></script>
-    <script src="Favorites.js"></script>
     <header class="navBar">
       <div class="library_title">
         <span class="brand_mark">ᛉ</span>
@@ -129,7 +127,7 @@
                 type="button"
                 aria-label="Add Odin's Wisdom to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(1, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -158,7 +156,7 @@
                 type="button"
                 aria-label="Add Thor Unbound to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(2, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -187,7 +185,7 @@
                 type="button"
                 aria-label="Add The Loki Code to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(3, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -220,7 +218,7 @@
                 type="button"
                 aria-label="Add Roots of Yggdrasil to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(4, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -253,7 +251,7 @@
                 type="button"
                 aria-label="Add Flight of the Valkyries to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(5, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -282,7 +280,7 @@
                 type="button"
                 aria-label="Add Before Ragnarok to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(6, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -311,7 +309,7 @@
                 type="button"
                 aria-label="Add Freyja's Gold to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(7, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -344,7 +342,7 @@
                 type="button"
                 aria-label="Add The Bifrost Watcher to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(8, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -373,7 +371,7 @@
                 type="button"
                 aria-label="Add Frigg's Foresight to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(9, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -402,7 +400,7 @@
                 type="button"
                 aria-label="Add The Hand of Tyr to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(10, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -435,7 +433,7 @@
                 type="button"
                 aria-label="Add Hel's Quiet Kingdom to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(11, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -468,7 +466,7 @@
                 type="button"
                 aria-label="Add Threads of the Norns to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(12, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -497,7 +495,7 @@
                 type="button"
                 aria-label="Add Sif's Harvest to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(13, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -530,7 +528,7 @@
                 type="button"
                 aria-label="Add Giants of Jotunheim to favorites"
                 title="Add to favorites"
-                onclick="addFavorite()"
+                onclick="addFavorite(14, this)"
               >
                 <span aria-hidden="true">♡</span>
               </button>
@@ -541,5 +539,8 @@
         </div>
       </section>
     </main>
+
+    <script src="Home.js"></script>
+    <script src="Favorites.js"></script>
   </body>
 </html>

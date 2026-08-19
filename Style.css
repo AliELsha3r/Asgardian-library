@@ -697,26 +697,33 @@ h1 span {
 }
 
 /* =========================================================
-9. FAVORITES PAGE STYLE
-========================================================= */
+   9. FAVORITES PAGE STYLE
+   ========================================================= */
 
-.Favorites_Page{
+.Favorites_Page {
     animation: fadeIn 1.5s ease-in;
-    background-image:linear-gradient(rgba(0, 0, 0, 0.5)) ,url("material/favorites_bgimg.jpeg");
+
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5)),
+        url("material/favorites_bgimg.jpeg");
+
     background-size: auto;
 }
 
-.favorites_txt{
+
+.favorites_txt {
     width: 100%;
     margin-top: 60px;
 }
 
-.favorite_title{
+
+.favorite_title {
     font-size: 50px;
     margin-top: 10px;
 }
 
-.Favorites_home{
+
+.Favorites_home {
     margin-left: 100px;
 
     padding: 10px 36px;
@@ -727,6 +734,7 @@ h1 span {
     box-sizing: border-box;
 
     background-color: rgba(0, 0, 0, .5);
+
     color: var(--gold);
 
     font-family: Georgia, "Times New Roman", serif;
@@ -735,13 +743,69 @@ h1 span {
     transition: 0.2s ease;
 }
 
-.Favorites_home:hover{
+
+.Favorites_home:hover {
     background-color: var(--gold);
     color: var(--bg);
+
     transform: translateY(-2px);
 }
 
 
+/* =========================================================
+   FAVORITES CONTAINER
+   ========================================================= */
+
+#favorites_container {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    margin: 60px 6%;
+
+    justify-content: center;
+}
+
+
+/* Favorite books */
+
+#favorites_container .book-card {
+    flex: 0 0 190px;
+}
+
+
+/* Remove button */
+
+#favorites_container .favorite-button {
+    background: var(--gold);
+
+    color: var(--bg);
+
+    border-color: var(--gold);
+}
+
+
+#favorites_container .favorite-button:hover {
+    background: transparent;
+
+    color: var(--gold);
+}
+
+
+/* Empty favorites */
+
+.no-favorites {
+    width: 100%;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 20px;
+
+    margin-top: 40px;
+}
 /* =========================================================
 10. FEATURED BOOK COLLECTION
 ========================================================= */
@@ -903,6 +967,12 @@ h1 span {
     color: var(--bg);
 
     outline: none;
+}
+
+.favorite-button.is-favorite {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--bg);
 }
 
 
