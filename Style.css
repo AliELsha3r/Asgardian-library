@@ -36,7 +36,7 @@ a {
     justify-content: space-between;
 
     border-bottom: 1px solid var(--line);
-    background: rgba(12, 13, 16, 0.9);
+    background: rgba(12, 13, 16, 0.4);
     backdrop-filter: blur(14px);
 
     position: sticky;
@@ -368,10 +368,10 @@ h1 span {
     border-radius: 6px;
 }
 
-.back_main {
+.login_main {
 
     margin-left: 70px;
-    margin-top: 40px;
+    margin-top: -10px;
 
     padding: 10px 36px;
 
@@ -389,7 +389,7 @@ h1 span {
     transition: 0.2s ease;
 }
 
-#back_main:hover {
+.login_main:hover {
     background-color: var(--gold);
     color: var(--bg);
     transform: translateY(-2px);
@@ -541,7 +541,7 @@ h1 span {
     width: 400px;
     padding: 35px;
     color: var(--text);
-    background-color: var(--panel);
+    background-color: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     box-shadow: var(--shadow);
 }
@@ -588,11 +588,14 @@ h1 span {
     border-radius: 10px;
 
     box-sizing: border-box;
+
+    transition: 0.2s ease;
 }
 
-.register-box input:focus {
+.register-box input:hover {
     outline: none;
     border-color: var(--gold);
+    transform: translateY(-2px);
 }
 
 .register-submit {
@@ -623,6 +626,32 @@ h1 span {
     color: var(--gold-light);
 }
 
+.register_main {
+
+    margin-left: -500px;
+
+    padding: 10px 36px;
+
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, .5);
+    color: var(--gold);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+
+    transition: 0.2s ease;
+}
+
+.register_main:hover {
+    background-color: var(--gold);
+    color: var(--bg);
+    transform: translateY(-2px);
+}
+
 /* =========================================================
 9. FAVORITES PAGE STYLE
 ========================================================= */
@@ -640,6 +669,31 @@ h1 span {
 .favorite_title{
     font-size: 50px;
     margin-top: 10px;
+}
+
+.Favorites_home{
+    margin-left: 100px;
+
+    padding: 10px 36px;
+
+    border: 1px solid var(--gold);
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, .5);
+    color: var(--gold);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+
+    transition: 0.2s ease;
+}
+
+.Favorites_home:hover{
+    background-color: var(--gold);
+    color: var(--bg);
+    transform: translateY(-2px);
 }
 
 
