@@ -16,6 +16,50 @@
     --shadow: 0 25px 70px rgba(0, 0, 0, .45);
 }
 
+
+#username{
+    color: #c7a76b ; 
+    font-family: Georgia, 
+    'Times New Roman', Times, serif; 
+    margin-bottom: -40px;
+    margin-left: 390px;
+     font-size: 32px; 
+     border-radius: 20px;
+     border-color: #c7a76b;
+    display: block;
+}
+#Email{
+    color: #c7a76b ; 
+    font-family: Georgia, 
+    'Times New Roman', Times, serif; 
+    margin-bottom: -40px;
+    margin-left: 390px;
+     font-size: 32px; 
+     border-radius: 20px;
+     border-color: #c7a76b;
+    display: block;
+}
+.box_info_personal{
+    margin-top: 8px;
+    margin-left: 570px;
+    height: auto ;
+        width: 360px;
+    padding: 10px 15px;
+    border: 1px solid #966b00;
+    border-radius: 3px;
+    background: #111214;
+    color: #5c4009;
+    font-family: Georgia, serif
+}
+
+.personal_info_page{
+
+    background-image:url("material/new personal.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 body {
     margin: 0;
     background-color: var(--bg);
