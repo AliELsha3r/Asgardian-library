@@ -708,6 +708,7 @@ h1 span {
         url("material/favorites_bgimg.jpeg");
 
     background-size: auto;
+    
 }
 
 
@@ -796,13 +797,15 @@ h1 span {
 /* Empty favorites */
 
 .no-favorites {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
     width: 100%;
 
     text-align: center;
 
     color: var(--muted);
 
-    font-size: 20px;
+    font-size: 30px;
 
     margin-top: 40px;
 }

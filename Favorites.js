@@ -31,7 +31,7 @@ function getFavorites() {
         return [];
     }
 }
-
+// getFavorites() -> cleans the list from any duplicates or undefined books
 let favorites = getFavorites();
 
 function saveFavorites() {
@@ -64,7 +64,7 @@ function addFavorite(bookNumber, button) {
     // If the book is already a favorite
     if (favorites.includes(bookNumber)) {
 
-        // Remove it
+        // Remove it if it is already favorited
         favorites = favorites.filter(id => id !== bookNumber);
 
     } else {
@@ -107,7 +107,7 @@ function displayFavorites() {
 
         container.innerHTML = `
             <p class="no-favorites">
-                Your collection is empty.
+                No relics adorn these sacred halls.
             </p>
         `;
 
@@ -131,10 +131,7 @@ function displayFavorites() {
 
                 </div>
 
-                <button
-                    class="favorite-button"
-                    onclick="removeFavorite(${book.id})"
-                >
+                <button class="favorite-button" onclick="removeFavorite(${book.id})">
                     ×
                 </button>
 
